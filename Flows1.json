@@ -1,0 +1,676 @@
+{
+    "flows": [
+        {
+            "groupId": 0,
+            "state": "ADDED",
+            "life": 5933,
+            "liveType": "UNKNOWN",
+            "lastSeen": 1618447983015,
+            "packets": 0,
+            "bytes": 0,
+            "id": "48695172664055447",
+            "appId": "org.onosproject.net.intent",
+            "priority": 100,
+            "timeout": 0,
+            "isPermanent": true,
+            "deviceId": "of:0000000000000003",
+            "tableId": 0,
+            "tableName": "0",
+            "treatment": {
+                "instructions": [
+                    {
+                        "type": "OUTPUT",
+                        "port": "2"
+                    }
+                ],
+                "deferred": []
+            },
+            "selector": {
+                "criteria": [
+                    {
+                        "type": "IN_PORT",
+                        "port": 1
+                    },
+                    {
+                        "type": "ETH_DST",
+                        "mac": "00:00:00:00:00:02"
+                    },
+                    {
+                        "type": "ETH_SRC",
+                        "mac": "00:00:00:00:00:01"
+                    }
+                ]
+            }
+        },
+        {
+            "groupId": 0,
+            "state": "ADDED",
+            "life": 5985,
+            "liveType": "UNKNOWN",
+            "lastSeen": 1618447983015,
+            "packets": 3860,
+            "bytes": 536540,
+            "id": "281476661728682",
+            "appId": "org.onosproject.core",
+            "priority": 40000,
+            "timeout": 0,
+            "isPermanent": true,
+            "deviceId": "of:0000000000000003",
+            "tableId": 0,
+            "tableName": "0",
+            "treatment": {
+                "instructions": [
+                    {
+                        "type": "OUTPUT",
+                        "port": "CONTROLLER"
+                    }
+                ],
+                "clearDeferred": true,
+                "deferred": []
+            },
+            "selector": {
+                "criteria": [
+                    {
+                        "type": "ETH_TYPE",
+                        "ethType": "0x88cc"
+                    }
+                ]
+            }
+        },
+        {
+            "groupId": 0,
+            "state": "ADDED",
+            "life": 5933,
+            "liveType": "UNKNOWN",
+            "lastSeen": 1618447983015,
+            "packets": 0,
+            "bytes": 0,
+            "id": "48695172891860161",
+            "appId": "org.onosproject.net.intent",
+            "priority": 100,
+            "timeout": 0,
+            "isPermanent": true,
+            "deviceId": "of:0000000000000003",
+            "tableId": 0,
+            "tableName": "0",
+            "treatment": {
+                "instructions": [
+                    {
+                        "type": "OUTPUT",
+                        "port": "1"
+                    }
+                ],
+                "deferred": []
+            },
+            "selector": {
+                "criteria": [
+                    {
+                        "type": "IN_PORT",
+                        "port": 2
+                    },
+                    {
+                        "type": "ETH_DST",
+                        "mac": "00:00:00:00:00:01"
+                    },
+                    {
+                        "type": "ETH_SRC",
+                        "mac": "00:00:00:00:00:02"
+                    }
+                ]
+            }
+        },
+        {
+            "groupId": 0,
+            "state": "ADDED",
+            "life": 5985,
+            "liveType": "UNKNOWN",
+            "lastSeen": 1618447983015,
+            "packets": 0,
+            "bytes": 0,
+            "id": "281477764386537",
+            "appId": "org.onosproject.core",
+            "priority": 40000,
+            "timeout": 0,
+            "isPermanent": true,
+            "deviceId": "of:0000000000000003",
+            "tableId": 0,
+            "tableName": "0",
+            "treatment": {
+                "instructions": [
+                    {
+                        "type": "OUTPUT",
+                        "port": "CONTROLLER"
+                    }
+                ],
+                "clearDeferred": true,
+                "deferred": []
+            },
+            "selector": {
+                "criteria": [
+                    {
+                        "type": "ETH_TYPE",
+                        "ethType": "0x806"
+                    }
+                ]
+            }
+        },
+        {
+            "groupId": 0,
+            "state": "ADDED",
+            "life": 5985,
+            "liveType": "UNKNOWN",
+            "lastSeen": 1618447983015,
+            "packets": 3860,
+            "bytes": 536540,
+            "id": "281476156249461",
+            "appId": "org.onosproject.core",
+            "priority": 40000,
+            "timeout": 0,
+            "isPermanent": true,
+            "deviceId": "of:0000000000000003",
+            "tableId": 0,
+            "tableName": "0",
+            "treatment": {
+                "instructions": [
+                    {
+                        "type": "OUTPUT",
+                        "port": "CONTROLLER"
+                    }
+                ],
+                "clearDeferred": true,
+                "deferred": []
+            },
+            "selector": {
+                "criteria": [
+                    {
+                        "type": "ETH_TYPE",
+                        "ethType": "0x8942"
+                    }
+                ]
+            }
+        },
+        {
+            "groupId": 0,
+            "state": "ADDED",
+            "life": 5985,
+            "liveType": "UNKNOWN",
+            "lastSeen": 1618447982835,
+            "packets": 3862,
+            "bytes": 536818,
+            "id": "281475616213265",
+            "appId": "org.onosproject.core",
+            "priority": 40000,
+            "timeout": 0,
+            "isPermanent": true,
+            "deviceId": "of:0000000000000004",
+            "tableId": 0,
+            "tableName": "0",
+            "treatment": {
+                "instructions": [
+                    {
+                        "type": "OUTPUT",
+                        "port": "CONTROLLER"
+                    }
+                ],
+                "clearDeferred": true,
+                "deferred": []
+            },
+            "selector": {
+                "criteria": [
+                    {
+                        "type": "ETH_TYPE",
+                        "ethType": "0x88cc"
+                    }
+                ]
+            }
+        },
+        {
+            "groupId": 0,
+            "state": "ADDED",
+            "life": 5985,
+            "liveType": "UNKNOWN",
+            "lastSeen": 1618447982835,
+            "packets": 0,
+            "bytes": 0,
+            "id": "281475265228006",
+            "appId": "org.onosproject.core",
+            "priority": 40000,
+            "timeout": 0,
+            "isPermanent": true,
+            "deviceId": "of:0000000000000004",
+            "tableId": 0,
+            "tableName": "0",
+            "treatment": {
+                "instructions": [
+                    {
+                        "type": "OUTPUT",
+                        "port": "CONTROLLER"
+                    }
+                ],
+                "clearDeferred": true,
+                "deferred": []
+            },
+            "selector": {
+                "criteria": [
+                    {
+                        "type": "ETH_TYPE",
+                        "ethType": "0x806"
+                    }
+                ]
+            }
+        },
+        {
+            "groupId": 0,
+            "state": "ADDED",
+            "life": 5985,
+            "liveType": "UNKNOWN",
+            "lastSeen": 1618447982835,
+            "packets": 3863,
+            "bytes": 536957,
+            "id": "281476729151998",
+            "appId": "org.onosproject.core",
+            "priority": 40000,
+            "timeout": 0,
+            "isPermanent": true,
+            "deviceId": "of:0000000000000004",
+            "tableId": 0,
+            "tableName": "0",
+            "treatment": {
+                "instructions": [
+                    {
+                        "type": "OUTPUT",
+                        "port": "CONTROLLER"
+                    }
+                ],
+                "clearDeferred": true,
+                "deferred": []
+            },
+            "selector": {
+                "criteria": [
+                    {
+                        "type": "ETH_TYPE",
+                        "ethType": "0x8942"
+                    }
+                ]
+            }
+        },
+        {
+            "groupId": 0,
+            "state": "ADDED",
+            "life": 5985,
+            "liveType": "UNKNOWN",
+            "lastSeen": 1618447982875,
+            "packets": 3,
+            "bytes": 126,
+            "id": "281478909873038",
+            "appId": "org.onosproject.core",
+            "priority": 40000,
+            "timeout": 0,
+            "isPermanent": true,
+            "deviceId": "of:0000000000000001",
+            "tableId": 0,
+            "tableName": "0",
+            "treatment": {
+                "instructions": [
+                    {
+                        "type": "OUTPUT",
+                        "port": "CONTROLLER"
+                    }
+                ],
+                "clearDeferred": true,
+                "deferred": []
+            },
+            "selector": {
+                "criteria": [
+                    {
+                        "type": "ETH_TYPE",
+                        "ethType": "0x806"
+                    }
+                ]
+            }
+        },
+        {
+            "groupId": 0,
+            "state": "ADDED",
+            "life": 5933,
+            "liveType": "UNKNOWN",
+            "lastSeen": 1618447982875,
+            "packets": 0,
+            "bytes": 0,
+            "id": "48695174078984124",
+            "appId": "org.onosproject.net.intent",
+            "priority": 100,
+            "timeout": 0,
+            "isPermanent": true,
+            "deviceId": "of:0000000000000001",
+            "tableId": 0,
+            "tableName": "0",
+            "treatment": {
+                "instructions": [
+                    {
+                        "type": "OUTPUT",
+                        "port": "3"
+                    }
+                ],
+                "deferred": []
+            },
+            "selector": {
+                "criteria": [
+                    {
+                        "type": "IN_PORT",
+                        "port": 1
+                    },
+                    {
+                        "type": "ETH_DST",
+                        "mac": "00:00:00:00:00:01"
+                    },
+                    {
+                        "type": "ETH_SRC",
+                        "mac": "00:00:00:00:00:02"
+                    }
+                ]
+            }
+        },
+        {
+            "groupId": 0,
+            "state": "ADDED",
+            "life": 5985,
+            "liveType": "UNKNOWN",
+            "lastSeen": 1618447982875,
+            "packets": 3862,
+            "bytes": 536818,
+            "id": "281477466379610",
+            "appId": "org.onosproject.core",
+            "priority": 40000,
+            "timeout": 0,
+            "isPermanent": true,
+            "deviceId": "of:0000000000000001",
+            "tableId": 0,
+            "tableName": "0",
+            "treatment": {
+                "instructions": [
+                    {
+                        "type": "OUTPUT",
+                        "port": "CONTROLLER"
+                    }
+                ],
+                "clearDeferred": true,
+                "deferred": []
+            },
+            "selector": {
+                "criteria": [
+                    {
+                        "type": "ETH_TYPE",
+                        "ethType": "0x88cc"
+                    }
+                ]
+            }
+        },
+        {
+            "groupId": 0,
+            "state": "ADDED",
+            "life": 5985,
+            "liveType": "UNKNOWN",
+            "lastSeen": 1618447982875,
+            "packets": 3862,
+            "bytes": 536818,
+            "id": "281477029321583",
+            "appId": "org.onosproject.core",
+            "priority": 40000,
+            "timeout": 0,
+            "isPermanent": true,
+            "deviceId": "of:0000000000000001",
+            "tableId": 0,
+            "tableName": "0",
+            "treatment": {
+                "instructions": [
+                    {
+                        "type": "OUTPUT",
+                        "port": "CONTROLLER"
+                    }
+                ],
+                "clearDeferred": true,
+                "deferred": []
+            },
+            "selector": {
+                "criteria": [
+                    {
+                        "type": "ETH_TYPE",
+                        "ethType": "0x8942"
+                    }
+                ]
+            }
+        },
+        {
+            "groupId": 0,
+            "state": "ADDED",
+            "life": 5933,
+            "liveType": "UNKNOWN",
+            "lastSeen": 1618447982875,
+            "packets": 0,
+            "bytes": 0,
+            "id": "48695173737040115",
+            "appId": "org.onosproject.net.intent",
+            "priority": 100,
+            "timeout": 0,
+            "isPermanent": true,
+            "deviceId": "of:0000000000000001",
+            "tableId": 0,
+            "tableName": "0",
+            "treatment": {
+                "instructions": [
+                    {
+                        "type": "OUTPUT",
+                        "port": "1"
+                    }
+                ],
+                "deferred": []
+            },
+            "selector": {
+                "criteria": [
+                    {
+                        "type": "IN_PORT",
+                        "port": 3
+                    },
+                    {
+                        "type": "ETH_DST",
+                        "mac": "00:00:00:00:00:02"
+                    },
+                    {
+                        "type": "ETH_SRC",
+                        "mac": "00:00:00:00:00:01"
+                    }
+                ]
+            }
+        },
+        {
+            "groupId": 0,
+            "state": "ADDED",
+            "life": 5985,
+            "liveType": "UNKNOWN",
+            "lastSeen": 1618447983010,
+            "packets": 3,
+            "bytes": 126,
+            "id": "281478316350853",
+            "appId": "org.onosproject.core",
+            "priority": 40000,
+            "timeout": 0,
+            "isPermanent": true,
+            "deviceId": "of:0000000000000002",
+            "tableId": 0,
+            "tableName": "0",
+            "treatment": {
+                "instructions": [
+                    {
+                        "type": "OUTPUT",
+                        "port": "CONTROLLER"
+                    }
+                ],
+                "clearDeferred": true,
+                "deferred": []
+            },
+            "selector": {
+                "criteria": [
+                    {
+                        "type": "ETH_TYPE",
+                        "ethType": "0x806"
+                    }
+                ]
+            }
+        },
+        {
+            "groupId": 0,
+            "state": "ADDED",
+            "life": 5985,
+            "liveType": "UNKNOWN",
+            "lastSeen": 1618447983011,
+            "packets": 3861,
+            "bytes": 536679,
+            "id": "281478673389323",
+            "appId": "org.onosproject.core",
+            "priority": 40000,
+            "timeout": 0,
+            "isPermanent": true,
+            "deviceId": "of:0000000000000002",
+            "tableId": 0,
+            "tableName": "0",
+            "treatment": {
+                "instructions": [
+                    {
+                        "type": "OUTPUT",
+                        "port": "CONTROLLER"
+                    }
+                ],
+                "clearDeferred": true,
+                "deferred": []
+            },
+            "selector": {
+                "criteria": [
+                    {
+                        "type": "ETH_TYPE",
+                        "ethType": "0x8942"
+                    }
+                ]
+            }
+        },
+        {
+            "groupId": 0,
+            "state": "ADDED",
+            "life": 5933,
+            "liveType": "UNKNOWN",
+            "lastSeen": 1618447983011,
+            "packets": 0,
+            "bytes": 0,
+            "id": "48695174995737803",
+            "appId": "org.onosproject.net.intent",
+            "priority": 100,
+            "timeout": 0,
+            "isPermanent": true,
+            "deviceId": "of:0000000000000002",
+            "tableId": 0,
+            "tableName": "0",
+            "treatment": {
+                "instructions": [
+                    {
+                        "type": "OUTPUT",
+                        "port": "1"
+                    }
+                ],
+                "deferred": []
+            },
+            "selector": {
+                "criteria": [
+                    {
+                        "type": "IN_PORT",
+                        "port": 3
+                    },
+                    {
+                        "type": "ETH_DST",
+                        "mac": "00:00:00:00:00:01"
+                    },
+                    {
+                        "type": "ETH_SRC",
+                        "mac": "00:00:00:00:00:02"
+                    }
+                ]
+            }
+        },
+        {
+            "groupId": 0,
+            "state": "ADDED",
+            "life": 5985,
+            "liveType": "UNKNOWN",
+            "lastSeen": 1618447983011,
+            "packets": 3861,
+            "bytes": 536679,
+            "id": "281475022575828",
+            "appId": "org.onosproject.core",
+            "priority": 40000,
+            "timeout": 0,
+            "isPermanent": true,
+            "deviceId": "of:0000000000000002",
+            "tableId": 0,
+            "tableName": "0",
+            "treatment": {
+                "instructions": [
+                    {
+                        "type": "OUTPUT",
+                        "port": "CONTROLLER"
+                    }
+                ],
+                "clearDeferred": true,
+                "deferred": []
+            },
+            "selector": {
+                "criteria": [
+                    {
+                        "type": "ETH_TYPE",
+                        "ethType": "0x88cc"
+                    }
+                ]
+            }
+        },
+        {
+            "groupId": 0,
+            "state": "ADDED",
+            "life": 5933,
+            "liveType": "UNKNOWN",
+            "lastSeen": 1618447983011,
+            "packets": 0,
+            "bytes": 0,
+            "id": "48695173977875945",
+            "appId": "org.onosproject.net.intent",
+            "priority": 100,
+            "timeout": 0,
+            "isPermanent": true,
+            "deviceId": "of:0000000000000002",
+            "tableId": 0,
+            "tableName": "0",
+            "treatment": {
+                "instructions": [
+                    {
+                        "type": "OUTPUT",
+                        "port": "3"
+                    }
+                ],
+                "deferred": []
+            },
+            "selector": {
+                "criteria": [
+                    {
+                        "type": "IN_PORT",
+                        "port": 1
+                    },
+                    {
+                        "type": "ETH_DST",
+                        "mac": "00:00:00:00:00:02"
+                    },
+                    {
+                        "type": "ETH_SRC",
+                        "mac": "00:00:00:00:00:01"
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{"flows":[
+ {
+  "priority": 100,
+  "isPermanent": "true",
+  "timeout":0,
+  "deviceId":"of:0000000000000004",
+  "treatment": {
+      },
+  "selector": {
+    "criteria": [
+      {
+        "type": "ETH_TYPE",
+        "ethType": "0x800"
+      },
+      {
+        "type": "IPV4_DST",
+        "ip": "10.0.0.2/32"
+      }
+    ]
+  }
+}
+]
+}
+
