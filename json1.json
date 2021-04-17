@@ -1,0 +1,175 @@
+{
+    "rules": [
+        {
+            "criteria": [
+                {
+                    "port": 1,
+                    "type": "IN_PORT"
+                },
+                {
+                    "mac": "00:00:00:00:00:02",
+                    "type": "ETH_DST"
+                },
+                {
+                    "mac": "00:00:00:00:00:01",
+                    "type": "ETH_SRC"
+                },
+                {
+                    "ethType": "0x800",
+                    "type": "ETH_TYPE"
+                }
+            ],
+            "deviceId": "of:0000000000000003",
+            "id": "562953363551361",
+            "instruction": [
+                {
+                    "type": "NOACTION"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 1,
+                    "type": "IN_PORT"
+                },
+                {
+                    "mac": "00:00:00:00:00:02",
+                    "type": "ETH_DST"
+                },
+                {
+                    "mac": "00:00:00:00:00:01",
+                    "type": "ETH_SRC"
+                }
+            ],
+            "deviceId": "of:0000000000000004",
+            "id": "48413697542448685",
+            "instruction": [
+                {
+                    "port": "2",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 2,
+                    "type": "IN_PORT"
+                },
+                {
+                    "mac": "00:00:00:00:00:01",
+                    "type": "ETH_DST"
+                },
+                {
+                    "mac": "00:00:00:00:00:02",
+                    "type": "ETH_SRC"
+                }
+            ],
+            "deviceId": "of:0000000000000004",
+            "id": "48413696062863307",
+            "instruction": [
+                {
+                    "port": "1",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 2,
+                    "type": "IN_PORT"
+                },
+                {
+                    "mac": "00:00:00:00:00:01",
+                    "type": "ETH_DST"
+                },
+                {
+                    "mac": "00:00:00:00:00:02",
+                    "type": "ETH_SRC"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "48413696517125328",
+            "instruction": [
+                {
+                    "port": "3",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 3,
+                    "type": "IN_PORT"
+                },
+                {
+                    "mac": "00:00:00:00:00:02",
+                    "type": "ETH_DST"
+                },
+                {
+                    "mac": "00:00:00:00:00:01",
+                    "type": "ETH_SRC"
+                }
+            ],
+            "deviceId": "of:0000000000000001",
+            "id": "48413698760329459",
+            "instruction": [
+                {
+                    "port": "2",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 3,
+                    "type": "IN_PORT"
+                },
+                {
+                    "mac": "00:00:00:00:00:01",
+                    "type": "ETH_DST"
+                },
+                {
+                    "mac": "00:00:00:00:00:02",
+                    "type": "ETH_SRC"
+                }
+            ],
+            "deviceId": "of:0000000000000002",
+            "id": "48413700019027147",
+            "instruction": [
+                {
+                    "port": "2",
+                    "type": "OUTPUT"
+                }
+            ]
+        },
+        {
+            "criteria": [
+                {
+                    "port": 2,
+                    "type": "IN_PORT"
+                },
+                {
+                    "mac": "00:00:00:00:00:02",
+                    "type": "ETH_DST"
+                },
+                {
+                    "mac": "00:00:00:00:00:01",
+                    "type": "ETH_SRC"
+                }
+            ],
+            "deviceId": "of:0000000000000002",
+            "id": "48413700006929252",
+            "instruction": [
+                {
+                    "port": "3",
+                    "type": "OUTPUT"
+                }
+            ]
+        }
+    ]
+}

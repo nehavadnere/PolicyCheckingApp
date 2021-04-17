@@ -1,28 +1,49 @@
-2021-04-15:18:33:56,541 INFO     [main.py:66] rules ::{'rules': [{'criteria': [{'port': 1, 'type': 'IN_PORT'}, {'mac': '00:00:00:00:00:02', 'type': 'ETH_DST'}, {'mac': '00:00:00:00:00:01', 'type': 'ETH_SRC'}], 'deviceId': 'of:0000000000000003', 'id': '48695172664055447', 'instruction': [{'port': '2', 'type': 'OUTPUT'}]}, {'criteria': [{'port': 2, 'type': 'IN_PORT'}, {'mac': '00:00:00:00:00:01', 'type': 'ETH_DST'}, {'mac': '00:00:00:00:00:02', 'type': 'ETH_SRC'}], 'deviceId': 'of:0000000000000003', 'id': '48695172891860161', 'instruction': [{'port': '1', 'type': 'OUTPUT'}]}, {'criteria': [{'port': 1, 'type': 'IN_PORT'}, {'mac': '00:00:00:00:00:01', 'type': 'ETH_DST'}, {'mac': '00:00:00:00:00:02', 'type': 'ETH_SRC'}], 'deviceId': 'of:0000000000000001', 'id': '48695174078984124', 'instruction': [{'port': '3', 'type': 'OUTPUT'}]}, {'criteria': [{'port': 3, 'type': 'IN_PORT'}, {'mac': '00:00:00:00:00:02', 'type': 'ETH_DST'}, {'mac': '00:00:00:00:00:01', 'type': 'ETH_SRC'}], 'deviceId': 'of:0000000000000001', 'id': '48695173737040115', 'instruction': [{'port': '1', 'type': 'OUTPUT'}]}, {'criteria': [{'port': 1, 'type': 'IN_PORT'}, {'mac': '00:00:00:00:00:02', 'type': 'ETH_DST'}, {'mac': '00:00:00:00:00:01', 'type': 'ETH_SRC'}], 'deviceId': 'of:0000000000000002', 'id': '48695174995737803', 'instruction': [{'port': '1', 'type': 'OUTPUT'}]}, {'criteria': [{'port': 1, 'type': 'IN_PORT'}, {'mac': '00:00:00:00:00:02', 'type': 'ETH_DST'}, {'mac': '00:00:00:00:00:01', 'type': 'ETH_SRC'}], 'deviceId': 'of:0000000000000002', 'id': '48695173977875945', 'instruction': [{'port': '3', 'type': 'OUTPUT'}]}]}
-2021-04-15:18:33:56,541 INFO     [main.py:101] device 1 = of:0000000000000003 device 2 = of:0000000000000003
-2021-04-15:18:33:56,541 INFO     [main.py:130] src 1 = 00:00:00:00:00:01 src 2 = 00:00:00:00:00:02
-2021-04-15:18:33:56,541 INFO     [main.py:131] dst 1 = 00:00:00:00:00:02 dst 2 = 00:00:00:00:00:01
-2021-04-15:18:33:56,541 INFO     [main.py:132] inpoer 1 = 1 inport 2 = 2
-2021-04-15:18:33:56,542 INFO     [main.py:101] device 1 = of:0000000000000003 device 2 = of:0000000000000001
-2021-04-15:18:33:56,542 INFO     [main.py:101] device 1 = of:0000000000000003 device 2 = of:0000000000000001
-2021-04-15:18:33:56,542 INFO     [main.py:101] device 1 = of:0000000000000003 device 2 = of:0000000000000002
-2021-04-15:18:33:56,542 INFO     [main.py:101] device 1 = of:0000000000000003 device 2 = of:0000000000000002
-2021-04-15:18:33:56,542 INFO     [main.py:101] device 1 = of:0000000000000003 device 2 = of:0000000000000001
-2021-04-15:18:33:56,542 INFO     [main.py:101] device 1 = of:0000000000000003 device 2 = of:0000000000000001
-2021-04-15:18:33:56,542 INFO     [main.py:101] device 1 = of:0000000000000003 device 2 = of:0000000000000002
-2021-04-15:18:33:56,542 INFO     [main.py:101] device 1 = of:0000000000000003 device 2 = of:0000000000000002
-2021-04-15:18:33:56,542 INFO     [main.py:101] device 1 = of:0000000000000001 device 2 = of:0000000000000001
-2021-04-15:18:33:56,542 INFO     [main.py:130] src 1 = 00:00:00:00:00:02 src 2 = 00:00:00:00:00:01
-2021-04-15:18:33:56,542 INFO     [main.py:131] dst 1 = 00:00:00:00:00:01 dst 2 = 00:00:00:00:00:02
-2021-04-15:18:33:56,542 INFO     [main.py:132] inpoer 1 = 1 inport 2 = 3
-2021-04-15:18:33:56,543 INFO     [main.py:101] device 1 = of:0000000000000001 device 2 = of:0000000000000002
-2021-04-15:18:33:56,543 INFO     [main.py:101] device 1 = of:0000000000000001 device 2 = of:0000000000000002
-2021-04-15:18:33:56,543 INFO     [main.py:101] device 1 = of:0000000000000001 device 2 = of:0000000000000002
-2021-04-15:18:33:56,543 INFO     [main.py:101] device 1 = of:0000000000000001 device 2 = of:0000000000000002
-2021-04-15:18:33:56,543 INFO     [main.py:101] device 1 = of:0000000000000002 device 2 = of:0000000000000002
-2021-04-15:18:33:56,543 INFO     [main.py:122] Exact Matching ( 48695174995737803, 48695173977875945 ) 
-2021-04-15:18:33:56,543 INFO     [main.py:130] src 1 = 00:00:00:00:00:01 src 2 = 00:00:00:00:00:01
-2021-04-15:18:33:56,543 INFO     [main.py:131] dst 1 = 00:00:00:00:00:02 dst 2 = 00:00:00:00:00:02
-2021-04-15:18:33:56,543 INFO     [main.py:132] inpoer 1 = 1 inport 2 = 1
-2021-04-15:18:33:56,543 INFO     [main.py:146] Exact Matching ( 48695174995737803, 48695173977875945 ) 
-   ::  [{'port': 1, 'type': 'IN_PORT'}, {'mac': '00:00:00:00:00:02', 'type': 'ETH_DST'}, {'mac': '00:00:00:00:00:01', 'type': 'ETH_SRC'}]
+2021-04-17:15:44:12,200 DEBUG    [connectionpool.py:208] Starting new HTTP connection (1): localhost
+2021-04-17:15:44:12,222 DEBUG    [connectionpool.py:396] http://localhost:8181 "GET /onos/v1/flows/ HTTP/1.1" 200 None
+2021-04-17:15:44:12,234 INFO     [main.py:65] rules ::{'rules': [{'deviceId': 'of:0000000000000003', 'id': '562953363551361', 'criteria': [{'type': 'IN_PORT', 'port': 1}, {'type': 'ETH_DST', 'mac': '00:00:00:00:00:02'}, {'type': 'ETH_SRC', 'mac': '00:00:00:00:00:01'}, {'type': 'ETH_TYPE', 'ethType': '0x800'}], 'instruction': [{'type': 'NOACTION'}]}, {'deviceId': 'of:0000000000000004', 'id': '48413697542448685', 'criteria': [{'type': 'IN_PORT', 'port': 1}, {'type': 'ETH_DST', 'mac': '00:00:00:00:00:02'}, {'type': 'ETH_SRC', 'mac': '00:00:00:00:00:01'}], 'instruction': [{'type': 'OUTPUT', 'port': '2'}]}, {'deviceId': 'of:0000000000000004', 'id': '48413696062863307', 'criteria': [{'type': 'IN_PORT', 'port': 2}, {'type': 'ETH_DST', 'mac': '00:00:00:00:00:01'}, {'type': 'ETH_SRC', 'mac': '00:00:00:00:00:02'}], 'instruction': [{'type': 'OUTPUT', 'port': '1'}]}, {'deviceId': 'of:0000000000000004', 'id': '562953438220796', 'criteria': [{'type': 'IN_PORT', 'port': 1}, {'type': 'ETH_DST', 'mac': '00:00:00:00:00:02'}, {'type': 'ETH_SRC', 'mac': '00:00:00:00:00:01'}, {'type': 'ETH_TYPE', 'ethType': '0x800'}], 'instruction': [{'type': 'NOACTION'}]}, {'deviceId': 'of:0000000000000001', 'id': '48413696517125328', 'criteria': [{'type': 'IN_PORT', 'port': 2}, {'type': 'ETH_DST', 'mac': '00:00:00:00:00:01'}, {'type': 'ETH_SRC', 'mac': '00:00:00:00:00:02'}], 'instruction': [{'type': 'OUTPUT', 'port': '3'}]}, {'deviceId': 'of:0000000000000001', 'id': '48413698760329459', 'criteria': [{'type': 'IN_PORT', 'port': 3}, {'type': 'ETH_DST', 'mac': '00:00:00:00:00:02'}, {'type': 'ETH_SRC', 'mac': '00:00:00:00:00:01'}], 'instruction': [{'type': 'OUTPUT', 'port': '2'}]}, {'deviceId': 'of:0000000000000002', 'id': '48413700019027147', 'criteria': [{'type': 'IN_PORT', 'port': 3}, {'type': 'ETH_DST', 'mac': '00:00:00:00:00:01'}, {'type': 'ETH_SRC', 'mac': '00:00:00:00:00:02'}], 'instruction': [{'type': 'OUTPUT', 'port': '2'}]}, {'deviceId': 'of:0000000000000002', 'id': '48413700006929252', 'criteria': [{'type': 'IN_PORT', 'port': 2}, {'type': 'ETH_DST', 'mac': '00:00:00:00:00:02'}, {'type': 'ETH_SRC', 'mac': '00:00:00:00:00:01'}], 'instruction': [{'type': 'OUTPUT', 'port': '3'}]}]}
+2021-04-17:15:44:12,235 INFO     [main.py:119] device 1 = of:0000000000000003 device 2 = of:0000000000000004
+2021-04-17:15:44:12,235 INFO     [main.py:119] device 1 = of:0000000000000003 device 2 = of:0000000000000004
+2021-04-17:15:44:12,235 INFO     [main.py:119] device 1 = of:0000000000000003 device 2 = of:0000000000000004
+2021-04-17:15:44:12,235 INFO     [main.py:119] device 1 = of:0000000000000003 device 2 = of:0000000000000001
+2021-04-17:15:44:12,235 INFO     [main.py:119] device 1 = of:0000000000000003 device 2 = of:0000000000000001
+2021-04-17:15:44:12,235 INFO     [main.py:119] device 1 = of:0000000000000003 device 2 = of:0000000000000002
+2021-04-17:15:44:12,235 INFO     [main.py:119] device 1 = of:0000000000000003 device 2 = of:0000000000000002
+2021-04-17:15:44:12,235 INFO     [main.py:119] device 1 = of:0000000000000004 device 2 = of:0000000000000004
+2021-04-17:15:44:12,235 INFO     [main.py:144] src 1 = 00:00:00:00:00:01 src 2 = 00:00:00:00:00:02
+2021-04-17:15:44:12,235 INFO     [main.py:145] dst 1 = 00:00:00:00:00:02 dst 2 = 00:00:00:00:00:01
+2021-04-17:15:44:12,236 INFO     [main.py:146] inpoer 1 = 1 inport 2 = 2
+2021-04-17:15:44:12,237 INFO     [main.py:119] device 1 = of:0000000000000004 device 2 = of:0000000000000004
+2021-04-17:15:44:12,238 INFO     [main.py:144] src 1 = 00:00:00:00:00:01 src 2 = 00:00:00:00:00:01
+2021-04-17:15:44:12,238 INFO     [main.py:145] dst 1 = 00:00:00:00:00:02 dst 2 = 00:00:00:00:00:02
+2021-04-17:15:44:12,242 INFO     [main.py:146] inpoer 1 = 1 inport 2 = 1
+2021-04-17:15:44:12,242 INFO     [main.py:158] Exact Matching ( 48413697542448685, 562953438220796 ) 
+   ::  [{'type': 'IN_PORT', 'port': 1}, {'type': 'ETH_DST', 'mac': '00:00:00:00:00:02'}, {'type': 'ETH_SRC', 'mac': '00:00:00:00:00:01'}]
+2021-04-17:15:44:12,242 INFO     [main.py:175] Conflict Rule ( 48413697542448685, 562953438220796 ) 
+2021-04-17:15:44:12,242 INFO     [main.py:119] device 1 = of:0000000000000004 device 2 = of:0000000000000001
+2021-04-17:15:44:12,242 INFO     [main.py:119] device 1 = of:0000000000000004 device 2 = of:0000000000000001
+2021-04-17:15:44:12,242 INFO     [main.py:119] device 1 = of:0000000000000004 device 2 = of:0000000000000002
+2021-04-17:15:44:12,242 INFO     [main.py:119] device 1 = of:0000000000000004 device 2 = of:0000000000000002
+2021-04-17:15:44:12,242 INFO     [main.py:119] device 1 = of:0000000000000004 device 2 = of:0000000000000004
+2021-04-17:15:44:12,242 INFO     [main.py:144] src 1 = 00:00:00:00:00:02 src 2 = 00:00:00:00:00:01
+2021-04-17:15:44:12,242 INFO     [main.py:145] dst 1 = 00:00:00:00:00:01 dst 2 = 00:00:00:00:00:02
+2021-04-17:15:44:12,242 INFO     [main.py:146] inpoer 1 = 2 inport 2 = 1
+2021-04-17:15:44:12,243 INFO     [main.py:119] device 1 = of:0000000000000004 device 2 = of:0000000000000001
+2021-04-17:15:44:12,243 INFO     [main.py:119] device 1 = of:0000000000000004 device 2 = of:0000000000000001
+2021-04-17:15:44:12,243 INFO     [main.py:119] device 1 = of:0000000000000004 device 2 = of:0000000000000002
+2021-04-17:15:44:12,243 INFO     [main.py:119] device 1 = of:0000000000000004 device 2 = of:0000000000000002
+2021-04-17:15:44:12,243 INFO     [main.py:119] device 1 = of:0000000000000004 device 2 = of:0000000000000001
+2021-04-17:15:44:12,243 INFO     [main.py:119] device 1 = of:0000000000000004 device 2 = of:0000000000000001
+2021-04-17:15:44:12,243 INFO     [main.py:119] device 1 = of:0000000000000004 device 2 = of:0000000000000002
+2021-04-17:15:44:12,243 INFO     [main.py:119] device 1 = of:0000000000000004 device 2 = of:0000000000000002
+2021-04-17:15:44:12,243 INFO     [main.py:119] device 1 = of:0000000000000001 device 2 = of:0000000000000001
+2021-04-17:15:44:12,243 INFO     [main.py:144] src 1 = 00:00:00:00:00:02 src 2 = 00:00:00:00:00:01
+2021-04-17:15:44:12,243 INFO     [main.py:145] dst 1 = 00:00:00:00:00:01 dst 2 = 00:00:00:00:00:02
+2021-04-17:15:44:12,243 INFO     [main.py:146] inpoer 1 = 2 inport 2 = 3
+2021-04-17:15:44:12,243 INFO     [main.py:119] device 1 = of:0000000000000001 device 2 = of:0000000000000002
+2021-04-17:15:44:12,246 INFO     [main.py:119] device 1 = of:0000000000000001 device 2 = of:0000000000000002
+2021-04-17:15:44:12,246 INFO     [main.py:119] device 1 = of:0000000000000001 device 2 = of:0000000000000002
+2021-04-17:15:44:12,246 INFO     [main.py:119] device 1 = of:0000000000000001 device 2 = of:0000000000000002
+2021-04-17:15:44:12,246 INFO     [main.py:119] device 1 = of:0000000000000002 device 2 = of:0000000000000002
+2021-04-17:15:44:12,246 INFO     [main.py:144] src 1 = 00:00:00:00:00:02 src 2 = 00:00:00:00:00:01
+2021-04-17:15:44:12,247 INFO     [main.py:145] dst 1 = 00:00:00:00:00:01 dst 2 = 00:00:00:00:00:02
+2021-04-17:15:44:12,247 INFO     [main.py:146] inpoer 1 = 3 inport 2 = 2

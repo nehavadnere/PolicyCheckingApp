@@ -4,18 +4,19 @@ import json
 import requests
 from logger import *
 from netaddr import EUI, mac_unix_expanded
-import pdb
+import time
 
 class IntentParser:
     def __init__(self):
         self.logger = get_logger(str(os.path.basename(__file__)))
         self.flowrules = {}
         self.exactMatch = {}
+        self.beginT = 0
+        self.endT = 0
+        self.report = ""
+        self.conflictCount = 0
 
-    def writeFile(self, content, filename, outputPath):
-        #file1 = open(filename,"w+")
-        #file1.write(content)
-        #file1.close()
+    def writeFileJson(self, content, filename, outputPath):
         with open(outputPath + os.path.sep + filename, "w", encoding='utf-8') as write_file:
             write_file.write(json.dumps(content,ensure_ascii=True))
 
@@ -24,47 +25,45 @@ class IntentParser:
     '''
     def parseOnosConfiguration(self, config):
 
-        #TODO Remove this section for opening test.json file
-        #f =open("test.json","r")
-        #self.onosFlowJson = json.loads(f.read())["rules"]
-
-        #TODO uncomment next line
         self.onosFlowJson = config
         opf ={}
         rules = []
 
         for flow in self.onosFlowJson:
+            print(flow)
             flowType = flow["treatment"]["instructions"][0]["type"]
-            flowPort = flow["treatment"]["instructions"][0]["port"]
-            if flowType == "OUTPUT" and flowPort != "CONTROLLER":
-                rule = {}
-                lines = []
-                rule["deviceId"] = flow["deviceId"]
-                rule["id"] = flow["id"]
+            if flowType == "OUTPUT":
+                flowPort = flow["treatment"]["instructions"][0]["port"]
+            if flowType == "OUTPUT" or flowType =="NOACTION":
+                if flowType == "NOACTION" or (flowType == "OUTPUT" and flowPort != "CONTROLLER"):
+                    rule = {}
+                    lines = []
+                    rule["deviceId"] = flow["deviceId"]
+                    rule["id"] = flow["id"]
 
-                #Parse selector criteria one by one
-                criteria = flow["selector"]["criteria"]
-                for items in criteria:
-                    lines.append(items)
-                rule["criteria"] = lines
-                
-                #Parse selector criteria one by one
-                lines_inst = []
-                instructions = flow["treatment"]["instructions"]
-                for items in instructions:
-                    lines_inst.append(items)
-                rule["instruction"] = lines_inst
+                    #Parse selector criteria one by one
+                    criteria = flow["selector"]["criteria"]
+                    for items in criteria:
+                        lines.append(items)
+                    rule["criteria"] = lines
+                    
+                    #Parse selector criteria one by one
+                    lines_inst = []
+                    instructions = flow["treatment"]["instructions"]
+                    for items in instructions:
+                        lines_inst.append(items)
+                    rule["instruction"] = lines_inst
 
-                rules.append(rule)
+                    rules.append(rule)
         opf["rules"] = rules
         self.flowrules = opf
 
         #TODO remove immendiate next 2 lines - this is only for testing
-        f =open("test.json","r")
-        self.flowrules = json.loads(f.read())
+        #f =open("test.json","r")
+        #self.flowrules = json.loads(f.read())
 
         self.logger.info("rules ::" +str(self.flowrules))
-        self.writeFile(self.flowrules, "ParsedFlows.json", "Results")
+        self.writeFileJson(self.flowrules, "ParsedFlows.json", "Results")
 
     def getAction(self,i,rule):
         return rule["instruction"]
@@ -84,6 +83,25 @@ class IntentParser:
                 if param == "IN_PORT":
                     return c[i]["port"]
             i+=1
+    
+    def writeFile(self, content, filename, outputPath):
+        filefull = outputPath + os.path.sep + filename
+        file1 = open(filefull,"a+")
+        file1.write(content)
+        file1.close()
+
+    def evalTime(self):
+        executionTime = (self.endT - self.beginT) * 1000 #in microseconds
+        num_flows = len(self.onosFlowJson)
+        content = str(num_flows)+ "," + str(executionTime) +"\n"
+        self.writeFile(content,"eval.csv", "Results")
+
+    def generateReport(self):
+        rep = "\n--------------------------------------------------------------\n"
+        rep += "                  CONFLICT CHECKING REPORT                    \n"
+        rep += "--------------------------------------------------------------\n\n"
+        rep += self.report
+        self.writeFile(rep , "report.txt", "Results")
 
     def flowPolicyCheck(self, n_index,fn, e_index, fe):
         criteria = []
@@ -108,7 +126,7 @@ class IntentParser:
         if not sameDevice:
             return
 
-        ethSrcMatch = ethDstMatch = inPortMatch = exactMarch = duplicate = conflict = 0
+        ethSrcMatch = ethDstMatch = inPortMatch = exactMatch = duplicate = conflict = 0
 
         #check selection criteria for new flowrule and existing flowrule
         if criteria_fn == criteria_fe:
@@ -118,12 +136,8 @@ class IntentParser:
             rules = []
             rules.append(criteria_fn)
             rules.append(criteria_fe)
-            #self.exactMatch.append()
             self.logger.info("Exact Matching ( " +id_fn+ ", " +id_fe+ " ) ")
 
-        #ethSrcMatch = tupleMatch("ETH_SRC", criteria_fn, criteria_fe, n_index, e_index)
-        #ethDstMatch = tupleMatch("ETH_DST", criteria_fn, criteria_fe, n_index, e_index)
-        #inPortMatch = tupleMatch("IN_PORT", criteria_fn, criteria_fe, n_index, e_index)
         id_fn = fn["id"]
         id_fe = fe["id"]
 
@@ -131,8 +145,6 @@ class IntentParser:
         self.logger.info("dst 1 = " + str(self.getValue(fn,"ETH_DST"))+ " dst 2 = "+ str(self.getValue(fe,"ETH_DST")))
         self.logger.info("inpoer 1 = " + str(self.getValue(fn,"IN_PORT"))+ " inport 2 = "+ str(self.getValue(fe,"IN_PORT")))
 
-        #fn_mac = EUI(self.getValue(fn,"ETH_SRC"), dialect=mac_unix_expanded)
-        #fe_mac = EUI(self.getValue(fe,"ETH_SRC"), dialect=mac_unix_expanded)
 
         if self.getValue(fn,"ETH_SRC") == self.getValue(fe,"ETH_SRC"):
                 ethSrcMatch = 1
@@ -145,15 +157,29 @@ class IntentParser:
             exactMatch = True
             self.logger.info("Exact Matching ( " +id_fn+ ", " +id_fe+ " ) \n   ::  "+str(self.getCriteria(0,fn)))
 
-        if action_fn[0]["port"] == action_fe[0]["port"] and exactMatch:
+        if action_fn[0]["type"] == action_fe[0]["type"] == "OUTPUT":
+            checkPort = True
+        else:
+            checkPort = False
+        if checkPort and action_fn[0]["port"] == action_fe[0]["port"] and exactMatch:
             duplicate = True
             self.logger.info("Duplicate Rule ( " +id_fn+ ", " +id_fe+ " ) ")
+            self.conflictCount += 1
+            self.report += "\n\n CONFLICT #" +str(self.conflictCount)+ ": \n -----------"
+            self.report += "\nDuplicate Rule ( " +id_fn+ ", " +id_fe+ " ) "
+            self.report += "\n\t Criteria :: " + str(self.getCriteria(0,fn))
+            self.report += "\n\t Action   :: " + str(self.getAction(0,fn))
         
-        #if action_fn[0]["port"] != action_fe[0]["port"] and exactMatch==False:
-        #    conflict = True
-        #    self.logger.info("Complete conflicting Rule ( " +id_fn+ ", " +id_fe+ " ) ")
-
-        ethSrcMatch = ethDstMatch = inPortMatch = exactMarch = duplicate = conflict = 0
+        if action_fn[0]["type"] == "NOACTION" or action_fe[0]["type"] == "NOACTION" and exactMatch:
+            duplicate = True
+            self.logger.info("Conflict Rule ( " +id_fn+ ", " +id_fe+ " ) ")
+            self.conflictCount += 1
+            self.report += "\n\n CONFLICT #" +str(self.conflictCount)+ ": \n -----------"
+            self.report += "\nConflict Rule ( " +id_fn+ ", " +id_fe+ " ) "
+            self.report += "\n\t Criteria :: " + str(self.getCriteria(0,fn))
+            self.report += "\n\t Actions  :: " + str(self.getAction(0,fn)) + "\t" + str(self.getAction(0,fe))
+        
+        ethSrcMatch = ethDstMatch = inPortMatch = exactMatch = duplicate = conflict = 0
         
 
     def flowPolicyCheckAll(self):
@@ -161,19 +187,25 @@ class IntentParser:
         for i,newFlow in enumerate(self.flowrules["rules"]):
             for j,existingFlow in enumerate(self.flowrules["rules"]):
                 if j>i:
+                    self.beginT = time.time()
                     self.flowPolicyCheck(i,newFlow, j,existingFlow)
+                    self.endT = time.time()
                 j+=1
             i+=1
 
     def main(self):
-        #c = ControllerCommunicator();
-        #c.connect();
+        c = ControllerCommunicator();
+        c.connect();
         f =open("Flows.json","r")
         data = json.loads(f.read())
 
         self.parseOnosConfiguration(data["flows"])
 
         self.flowPolicyCheckAll()
+
+        self.evalTime()
+
+        self.generateReport()
 
 
 
